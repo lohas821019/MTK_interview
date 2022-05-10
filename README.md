@@ -451,5 +451,125 @@ BSS 段(.bss)存放的是未初始化的全域變數，
 有出多選題問Stack裡面放什麼資料
 
 
+<br/>
+
+# 35
+
+What is "const" ? and what is the meaning of:
+
+```
+const int a;
+int const a;
+const int * a;
+int * const a;
+int const * a const;
+```
+
+
+<br/>
+
+# 36
+
+What is the difference between "Inline Function" and "Macro" ?
+
+
+<br/>
+
+# 37
+
+Explain "static" ?
+
+
+<br/>
+
+# 38
+
+What is stack and heap when talking about memory?
+
+<br/>
+
+# 39
+
+Explain "thread" and "process",and what is the difference?
+
+<br/>
+
+# 40
+
+Typedef 在C語言中頻繁用以宣告一個已經存在的資料型態的同義字，也可以用預處理器做類似的事，例如思考一下下面的例子:
+
+```
+#definr dPS struct s *
+typedef struct s * tPS;
+```
+哪種方法更好?為什麼?
+
+<br/>
+
+# 41
+
+What is the difference between variable declaration and definition?
+
+
+
+<br/>
+
+# 42
+
+What is the output of the following program?
+
+```
+void foo(void){
+	unsigned int a = 6;
+	int b = -20;
+	(a+b>6) ? puts(">6"): puts("<6");
+}
+```
+
+<br/>
+
+# 43
+
+The faster way to an integer multiply by 7 ? (bitwise)
+
+<br/>
+
+# 44
+
+以單字為反轉字串， Ex: He is a boy => boy a is He。
+
+
+<br/>
+
+# 45
+
+計算自訂型態的記憶體大小，不可以使用sizeof，也不可有自訂型態變數或其指標。
+
+
+<br/>
+
+# 46
+
+Write functions isUpper() and toUpper()
+
+
+<br/>
+
+# 47
+
+Count the number of 1 in an integer x (in binary)?
+
+<br/>
+
+# 48
+
+What is the possible error of below SQR function:
+
+```
+int SQR(volatile int *a){
+
+	return (*a)*(*a);
+}
+```
 
 
