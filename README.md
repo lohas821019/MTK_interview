@@ -304,8 +304,149 @@ Write a code that check the input is a multiple of 3 or not without using divisi
 Explain lvalue and rvalue.
 
 
+<br/>
 
-# 23 下面尚未補齊
+# 23 
 https://hackmd.io/@Rance/SkSJL_5gX?type=view
 
+```
+extern void func1(void);
+extern void func2(void);
+extern void func3(void);
+extern void func4(void);
+extern void func5(void);
+
+void main(int n)
+{
+  if n==1 execute func1;
+  if n==2 execute func2;
+  if n==3 execute func3;
+  if n==4 execute func4;
+  if n==5 execute func5;
+}
+
+```
+
+<br/>
+
+# 24
+
+```
+extern void func1(void);
+extern void func2(void);
+extern void func3(void);
+extern void func4(void);
+extern void func5(void);
+
+void main(int n)
+{
+  if n==33 execute func1;
+  if n==67 execute func2;
+  if n==324 execute func3;
+  if n==231 execute func4;
+  if n==687 execute func5;
+}
+
+```
+
+<br/>
+
+# 25
+
+inline int nSum(int N){
+    return (n+n*n)/2
+
+
+<br/>
+
+# 26  寫出3種反轉字元的方式
+
+reverse a string
+
+
+<br/>
+
+# 27  
+
+寫一個“標準”巨集MIN ，這個巨集輸入兩個參數並返回較小的一個。
+
+
+<br/>
+
+# 28
+Write a MARCO to calculate the square of integer a.
+
+<br/>
+
+# 29
+Write a function to find the middle field of singled-linked list without traverse whole list.
+
+<br/>
+
+# 30
+Write a code to reverse the linked list. For example: [0] -> [n], [1]->[n-1],…[n]->[0].
+
+<br/>
+
+# 31
+Find the possible error
+```
+Int ival;
+Int **p;
+Ival = *p;
+```
+
+<br/>
+
+# 32
+What is the possible error of below SQR function.
+
+```
+int SQR(volatile int *a){
+   return (*a)*(*a);
+}
+```
+
+<br/>
+
+# 33
+用預處理指令#define 聲明一個常數，用以表明1年中有多少秒（忽略閏年問題）
+
+<br/>
+
+# 34
 http://arc2453.blog.fc2.com/blog-entry-31.html
+
+
+Global 直接宣告參數不給值
+跟function 裡面宣告參數不給值
+直接印會印出什麼
+
+
+兩個 String還是Char陣列
+分別丟同樣的字串
+問如果直接 = =會有什麼樣的結果
+true,false或不能編譯
+
+```
+SWAP( int*a, int*b){
+temp=a;
+b=a;
+b=temp;}
+```
+
+extern / inline / intern
+
+
+
+C裡面的memory
+程式段(.text)主要存放程式的機器碼，
+資料段(.data)則是存放全域變數的資料，
+BSS 段(.bss)存放的是未初始化的全域變數，
+堆積段(.heap)程式使用 malloc 進行記憶體分配時，可以分配的動態記憶空間
+堆疊段(.stack)則存放「參數、函數返回點、區域變數、框架指標」等資料
+有出多選題問Stack裡面放什麼資料
+
+
+
+
