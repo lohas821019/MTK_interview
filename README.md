@@ -67,7 +67,8 @@ int fun(int x)
     while(x){
 
     count++;
-
+	printf("%i",count);
+	
     x = x & (x-1)
 }
 
@@ -90,9 +91,9 @@ int main()
 
 int i, j;
 
-for (i = 0, j = 1; i < 5; i++) // 3, 5, 9, 17, 33
+for (i = 0, j = 1; i < 5; i++) 
 
-    INC(j); // 1, 2, 4, 8, 16
+    INC(j); 
 
     printf("j = %d\n", j);
 
