@@ -68,7 +68,7 @@ int fun(int x)
 
     count++;
 	printf("%i",count);
-	
+
     x = x & (x-1)
 }
 
@@ -91,9 +91,9 @@ int main()
 
 int i, j;
 
-for (i = 0, j = 1; i < 5; i++) 
+for (i = 0, j = 1; i < 5; i++)
 
-    INC(j); 
+    INC(j);
 
     printf("j = %d\n", j);
 
@@ -119,7 +119,7 @@ printf("%d, %d", ques1, ques2)
 
 <br/>
 
-# 9 
+# 9
 
 https://jaime-lin.medium.com/%E8%81%AF%E7%99%BC%E7%A7%91-c%E8%AA%9E%E8%A8%80%E6%B8%AC%E8%A9%A6%E9%A1%8C%E7%9B%AE-7097f09add02
 ```
@@ -141,7 +141,7 @@ int main(void) {
 	int z;
 	x = func(x, &y);
 	z = func(x, &y);
-	printf("sum of x, y, z, and c = %d", x + y + z + c); 
+	printf("sum of x, y, z, and c = %d", x + y + z + c);
 	return 0;
 }
 
@@ -149,7 +149,7 @@ int main(void) {
 ```
 <br/>
 
-# 10 
+# 10
 
 
 ```
@@ -165,8 +165,8 @@ int func(int n){
 int main(void) {
 	c = 1;
 	int n = 2;
-	func(func(func(func(func(func(func(func(n)))))))); 
-	printf("c = %d", c); 
+	func(func(func(func(func(func(func(func(n))))))));
+	printf("c = %d", c);
 	return 0;
 }
 
@@ -184,7 +184,7 @@ int main(void) {
 int main(void) {
 	int m = 5, n = 10;
 	int p = ADD(m, n) * 5;
-	printf("p = %d", p); 
+	printf("p = %d", p);
 	return 0;
 }
 
@@ -221,7 +221,7 @@ int main(void) {
 
 <br/>
 
-# 13 
+# 13
 
 1. 一個整型數（An integer）
 2. 一個指向整型數的指標（A pointer to an integer）
@@ -260,24 +260,27 @@ Explain "#error"
 
 <br/>
 
-# 17 
+# 17
 
 Explain "struct" and "union"?
 
 
 <br/>
 
-# 18 
+# 18
 
 Explain "volatile". Can we use "const" and "volatile" in the same variable? Can we use "volatile" in a pointer?
 
 <br/>
 
-# 19 
+# 19
 
 write a code
+
 a. set the specific bit
+
 b. clear the specific bit
+
 c. inverse the specific bit (0->1; 1->0)
 
 
@@ -307,7 +310,7 @@ Explain lvalue and rvalue.
 
 <br/>
 
-# 23 
+# 23
 https://hackmd.io/@Rance/SkSJL_5gX?type=view
 
 ```
@@ -365,7 +368,7 @@ reverse a string
 
 <br/>
 
-# 27  
+# 27
 
 寫一個“標準”巨集MIN ，這個巨集輸入兩個參數並返回較小的一個。
 
@@ -383,7 +386,9 @@ Write a function to find the middle field of singled-linked list without travers
 <br/>
 
 # 30
-Write a code to reverse the linked list. For example: [0] -> [n], [1]->[n-1],…[n]->[0].
+Write a code to reverse the linked list.
+
+For example: [0] -> [n], [1]->[n-1],…[n]->[0].
 
 <br/>
 
