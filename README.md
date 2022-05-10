@@ -352,9 +352,7 @@ void main(int n)
 <br/>
 
 # 25
-
-inline int nSum(int N){
-    return (n+n*n)/2
+寫一個 function 可傳入正整數參數 N，回傳 1 + 2 + 3 +…+N 的和
 
 
 <br/>
@@ -420,13 +418,15 @@ http://arc2453.blog.fc2.com/blog-entry-31.html
 
 Global 直接宣告參數不給值
 跟function 裡面宣告參數不給值
-直接印會印出什麼
+直接印會印出什麼?
 
 
 兩個 String還是Char陣列
 分別丟同樣的字串
-問如果直接 = =會有什麼樣的結果
+問如果直接 == 會有什麼樣的結果
 true,false或不能編譯
+
+<br/>
 
 ```
 SWAP( int*a, int*b){
@@ -434,10 +434,7 @@ temp=a;
 b=a;
 b=temp;}
 ```
-
 extern / inline / intern
-
-
 
 C裡面的memory
 程式段(.text)主要存放程式的機器碼，
