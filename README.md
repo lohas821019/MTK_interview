@@ -238,8 +238,10 @@ int main(void) {
 <br/>
 
 # 14 Swap 的各種寫法 (bitwise ,指標)
-http://puremonkey2010.blogspot.com/2011/05/c-bitwise-operation.html
 
+[bitwise解法](http://puremonkey2010.blogspot.com/2011/05/c-bitwise-operation.html)
+
+[指標解法](https://www.796t.com/content/1549322654.html)
 
 <br/>
 
