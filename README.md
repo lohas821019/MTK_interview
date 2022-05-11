@@ -271,11 +271,16 @@ Explain "struct" and "union"?
 
 # 18
 
-Explain "volatile". Can we use "const" and "volatile" in the same variable? Can we use "volatile" in a pointer?
+Explain "volatile". 
+
+Can we use "const" and "volatile" in the same variable? 
+
+Can we use "volatile" in a pointer?
 
 <br/>
 
 # 19
+https://hackmd.io/@sysprog/c-bitwise
 
 write a code
 
@@ -299,6 +304,7 @@ pf(*papf)[3];
 <br/>
 
 # 21
+https://www.geeksforgeeks.org/write-an-efficient-method-to-check-if-a-number-is-multiple-of-3/
 
 Write a code that check the input is a multiple of 3 or not without using division or mod
 
