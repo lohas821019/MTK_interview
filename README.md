@@ -303,7 +303,7 @@ pf(*papf)[3];
 
 <br/>
 
-# 21
+# 21 考你如何使用bitwise (難)
 https://www.geeksforgeeks.org/write-an-efficient-method-to-check-if-a-number-is-multiple-of-3/
 
 Write a code that check the input is a multiple of 3 or not without using division or mod
@@ -318,9 +318,12 @@ Explain lvalue and rvalue.
 
 <br/>
 
-# 23
+# 23 
 https://hackmd.io/@Rance/SkSJL_5gX?type=view
 
+https://cvfiasd.pixnet.net/blog/post/273373732-%E5%88%A9%E7%94%A8function-pointer-array%E7%B4%A2%E5%BC%95%E5%87%BD%E5%BC%8F
+
+https://ppt.cc/qNDB
 ```
 extern void func1(void);
 extern void func2(void);
@@ -340,8 +343,9 @@ void main(int n)
 ```
 
 <br/>
+https://ppt.cc/qNDB
 
-# 24
+# 24 (難)
 
 ```
 extern void func1(void);
@@ -430,6 +434,7 @@ int SQR(volatile int *a){
 http://arc2453.blog.fc2.com/blog-entry-31.html
 
 
+
 Global 直接宣告參數不給值
 跟function 裡面宣告參數不給值
 直接印會印出什麼?
@@ -448,14 +453,20 @@ temp=a;
 b=a;
 b=temp;}
 ```
-extern / inline / intern
+[extern / inline / intern](https://hackmd.io/@HsuChiChen/c-inline)
 
 C裡面的memory
+
 程式段(.text)主要存放程式的機器碼，
+
 資料段(.data)則是存放全域變數的資料，
+
 BSS 段(.bss)存放的是未初始化的全域變數，
+
 堆積段(.heap)程式使用 malloc 進行記憶體分配時，可以分配的動態記憶空間
+
 堆疊段(.stack)則存放「參數、函數返回點、區域變數、框架指標」等資料
+
 有出多選題問Stack裡面放什麼資料
 
 
@@ -466,11 +477,11 @@ BSS 段(.bss)存放的是未初始化的全域變數，
 What is "const" ? and what is the meaning of:
 
 ```
-const int a;
-int const a;
-const int * a;
-int * const a;
-int const * a const;
+1. const int a;
+2. int const a;
+3. const int * a;
+4. int * const a;
+5. int const * a const;
 ```
 
 
