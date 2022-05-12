@@ -495,6 +495,7 @@ What is the difference between "Inline Function" and "Macro" ?
 <br/>
 
 # 37
+https://www.796t.com/content/1547705175.html
 
 Explain "static" ?
 
@@ -502,6 +503,9 @@ Explain "static" ?
 <br/>
 
 # 38
+https://nwpie.blogspot.com/2017/05/5-stack-heap.html
+
+https://ptt-chat.com/WomenTalk/l/CHAT.M.1598976583.A.721
 
 What is stack and heap when talking about memory?
 
@@ -518,7 +522,7 @@ Explain "thread" and "process",and what is the difference?
 Typedef 在C語言中頻繁用以宣告一個已經存在的資料型態的同義字，也可以用預處理器做類似的事，例如思考一下下面的例子:
 
 ```
-#definr dPS struct s *
+#define dPS struct s *
 typedef struct s * tPS;
 ```
 哪種方法更好?為什麼?
@@ -526,6 +530,7 @@ typedef struct s * tPS;
 <br/>
 
 # 41
+https://www.geeksforgeeks.org/difference-between-definition-and-declaration/
 
 What is the difference between variable declaration and definition?
 
@@ -579,16 +584,4 @@ Write functions isUpper() and toUpper()
 Count the number of 1 in an integer x (in binary)?
 
 <br/>
-
-# 48
-
-What is the possible error of below SQR function:
-
-```
-int SQR(volatile int *a){
-
-	return (*a)*(*a);
-}
-```
-
 
