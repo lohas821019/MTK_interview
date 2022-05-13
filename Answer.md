@@ -253,11 +253,64 @@ int main(void) {
 
 [bitwise解法](http://puremonkey2010.blogspot.com/2011/05/c-bitwise-operation.html)
 
+```
+int main(void) {
+    
+    int a = 10;
+    int b = 20;
+    
+    printf("%d\n",a);
+    printf("%d\n",b);
+    
+    a = a^b;
+    b = a^b;
+    a = a^b;
+    
+    printf("%d\n",a);
+    printf("%d\n",b);
+}
+```
+
 [指標解法](https://www.796t.com/content/1549322654.html)
+
+```
+#include <stdio.h>
+
+void swap(int* a, int* b){
+    int temp;
+    temp = *a;
+    *a = *b ;
+    *b = temp;
+}
+
+int main(void) {
+    
+    int a = 10;
+    int b = 20;
+    
+    int * pa = &a;
+    int * pb = &b;
+    
+    printf("%p\n",pa);
+    printf("%p\n",pb);
+    
+    printf("%d\n",a);
+    printf("%d\n",b);
+    
+    swap(pa,pb);
+    
+    printf("%p\n",pa);
+    printf("%p\n",pb);
+    
+    printf("%d\n",a);
+    printf("%d\n",b);
+}
+```
+
 
 <br/>
 
-# 15 leetcode 53
+# 15
 
 https://leetcode.com/problems/maximum-subarray/
 
@@ -320,24 +373,7 @@ https://www.geeksforgeeks.org/write-an-efficient-method-to-check-if-a-number-is-
 
 Write a code that check the input is a multiple of 3 or not without using division or mod
 
-```
-//投機作法，非最正確解
-#include <stdio.h>
-int main(){
-	
-    int x ;
-    int c;
-    scanf("%d",&x);
-    c = x % 3;
 
-    if(c==0){
-        printf("%d 是3的倍數\n",x);
-    }
-    else{ 
-        printf("%d 不是3的倍數\n",x);
-    }
-}
-```
 <br/>
 
 # 22
@@ -587,8 +623,7 @@ The faster way to an integer multiply by 7 ? (bitwise)
 
 <br/>
 
-# 44 leetcode 151
-https://leetcode.com/problems/reverse-words-in-a-string/discuss/805248/C-4ms-and-5.7M-in-place-no-string-library.
+# 44
 
 以單字為反轉字串， Ex: He is a boy => boy a is He。
 
