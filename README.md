@@ -251,6 +251,8 @@ int main(void) {
 
 # 14 Swap 的各種寫法 (bitwise ,指標)
 
+[詳細說明指標互換的問題](https://www.796t.com/content/1546612572.html)
+
 [bitwise解法](http://puremonkey2010.blogspot.com/2011/05/c-bitwise-operation.html)
 
 [指標解法](https://www.796t.com/content/1549322654.html)
