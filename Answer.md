@@ -689,23 +689,18 @@ Ans:
 ```
 //a. set the specific bit
 
-int a = 1 ;
-
-a |= (1<<(n));
+#define setbit(a,n) (a |= (1<<(n))
 
 
 //b. clear the specific bit
 
-int a = 1 ;
-
-a &= ~(1<<(n));
+#define clearbit(a,n) (a &= ~(1<<(n))
 
 
 //c. inverse the specific bit (0->1; 1->0)
 
-int a = 1 ;
+#define togglebit(a,n) (a ^= (1<<(n))
 
-a ^= (1<<(n));
 
 ```
 <br/>
@@ -777,7 +772,7 @@ https://hackmd.io/@Rance/SkSJL_5gX?type=view
 
 https://cvfiasd.pixnet.net/blog/post/273373732-%E5%88%A9%E7%94%A8function-pointer-array%E7%B4%A2%E5%BC%95%E5%87%BD%E5%BC%8F
 
-https://ppt.cc/qNDB
+https://ppt.cc/qNDB  //(參考這寫法)
 ```
 extern void func1(void);
 extern void func2(void);
@@ -792,6 +787,22 @@ void main(int n)
   if n==3 execute func3;
   if n==4 execute func4;
   if n==5 execute func5;
+}
+
+```
+
+Ans:
+
+```
+int main(int n) {
+    static void (*x[5])(void) = {
+        [1] = func1,
+        [2] = func2,
+        [3] = func3,
+        [4] = func4,
+        [5] = func5
+    };
+    x[(n%5)+1]();
 }
 
 ```
@@ -816,21 +827,48 @@ void main(int n)
   if n==231 execute func4;
   if n==687 execute func5;
 }
+```
+
+Ans:
 
 ```
+extern void func1(void);
+extern void f2(void);
+extern void f3(void);
+extern void f4(void);
+extern void f5(void);
+
+int main(int n) {
+    static void (*x[16])(void) = {
+        [1] = f1,
+        [3] = f2,
+        [4] = f3,
+        [7] = f4,
+        [15] = f5
+    };
+    x[n % 16]();
+}
+```
+
 
 <br/>
 
 # 25
 寫一個 function 可傳入正整數參數 N，回傳 1 + 2 + 3 +…+N 的和
 
+Ans:
 
+```
+void SUM(int n){
+    return (1+n)*(n)/2;
+}
+
+```
 <br/>
 
-# 26  寫出3種反轉字元的方式
+# 26  寫出反轉字元的方式
 
 reverse a string
-
 
 <br/>
 
@@ -838,11 +876,21 @@ reverse a string
 
 寫一個“標準”巨集MIN ，這個巨集輸入兩個參數並返回較小的一個。
 
+Ans:
 
+```
+#define MIN(a,b) (a)<(b)?(a):(b)
+```
 <br/>
 
 # 28
 Write a MARCO to calculate the square of integer a.
+
+Ans:
+
+```
+#define square(a) ((a)*(a))
+```
 
 <br/>
 
@@ -866,6 +914,16 @@ Int **p;
 Ival = *p;
 ```
 
+Ans:
+
+ival => Int 
+
+**p => a pointer to a pointer to a integer
+
+*p  => a pointer to a integer
+
+所以，Ival = *p 會出現錯誤
+
 <br/>
 
 # 32
@@ -877,17 +935,42 @@ int SQR(volatile int *a){
 }
 ```
 
+Ans:
+
+因為是 volatile int* a ，所以不穩定數值可能會變，
+
+因此，2個*a的值可能會不同。
+
+```
+//正確寫法
+
+int SQR(volatile int *a){
+    int b;
+    b = *a;
+   return (b)*(b);
+}
+```
+
 <br/>
 
 # 33
 用預處理指令#define 聲明一個常數，用以表明1年中有多少秒（忽略閏年問題）
 
+Ans:
+
+```
+//記得要空格
+
+#define leapyearsec (60*60*24*365)
+
+//應該也可以寫成下面這樣
+
+#define leapyearsec() (60*60*24*365)
+```
 <br/>
 
 # 34
 http://arc2453.blog.fc2.com/blog-entry-31.html
-
-
 
 Global 直接宣告參數不給值
 跟function 裡面宣告參數不給值
@@ -938,6 +1021,15 @@ What is "const" ? and what is the meaning of:
 5. int const * a const;
 ```
 
+Ans:
+
+// 注意const 在 * 的左方還是右方，以這題為例，*左方修飾in,*右方修飾指標
+
+1. const int a; => 只可以讀的整數a
+2. int const a; => 只可以讀的整數a
+3. const int * a; =>指標a指向一個只可以讀的整數,指標可以改,a不能改
+4. int * const a; =>一個只可以讀的指標a指向一個整數 ,指標不能改，但指向的整數可以改
+5. int const * a const; => 一個只可以讀的指標a指向一個只可以讀的整數，都不能改
 
 <br/>
 
@@ -945,6 +1037,11 @@ What is "const" ? and what is the meaning of:
 
 What is the difference between "Inline Function" and "Macro" ?
 
+Ans:
+
+Inline Function 代表的是最佳化函式，inline告訴compiler要執行最佳化，因此會在程式中展開，若是一般的Function要從外部讀取比較花時間。
+
+Macro 是指在預處理器就先執行的巨集，在程式中只執行單純的替換文本的功能。
 
 <br/>
 
@@ -952,6 +1049,10 @@ What is the difference between "Inline Function" and "Macro" ?
 https://www.796t.com/content/1547705175.html
 
 Explain "static" ?
+
+Ans:
+
+static主要的功能是隱藏global，讓他只能在特定範圍內可見，若兩個檔案皆有相同的宣告變數時，可透過此方法使其執行時正常。此外static的作用是預設初始化為0
 
 
 <br/>
@@ -967,11 +1068,21 @@ What is stack and heap when talking about memory?
 
 # 39
 
+https://www.geeksforgeeks.org/difference-between-process-and-thread/
+
 Explain "thread" and "process",and what is the difference?
+
+Ans:
+
+process : 進程，以電腦為例，每個軟體都是一個process，每個process會去share總共的cpu/memory空間，抓下來後獨自使用不分享，執行時較慢，效率較低。
+
+thread : 每個process裡面至少有一個thread，thread會去分享"process所佔下來的空間"，每個thread一起分享使用這個空間，執行時較快，效率較高。
 
 <br/>
 
 # 40
+
+https://www.runoob.com/note/24230
 
 Typedef 在C語言中頻繁用以宣告一個已經存在的資料型態的同義字，也可以用預處理器做類似的事，例如思考一下下面的例子:
 
@@ -981,6 +1092,24 @@ typedef struct s * tPS;
 ```
 哪種方法更好?為什麼?
 
+
+Ans:
+
+假設，
+```
+dPS p1,p2; 
+tPS p3,p4;
+
+//解析後
+
+struct s *p1,p2
+tPS p3,p4;
+```
+p1為指向一個結構的指標，p2只是單純一個結構，p3,p4則都是指向結構的指標，因此使用typedef會比較好。
+
+使用typedef struct s * tPS 更好
+
+
 <br/>
 
 # 41
@@ -988,7 +1117,20 @@ https://www.geeksforgeeks.org/difference-between-definition-and-declaration/
 
 What is the difference between variable declaration and definition?
 
+Ans:
 
+舉例來說 :
+
+```
+int a ; //declaration
+a = 5 ; // definition
+
+declaration:告訴 compiler 我要宣告一個整數型別的a，此時尚未分配記憶體位置 ，一個變量或函數可以多次宣告。
+
+
+definition: 告訴 compiler 我要將5放入a的裡面，此時會分配記憶體位置，一個變量或函數只能定義一次。
+
+```
 
 <br/>
 
@@ -1004,12 +1146,25 @@ void foo(void){
 }
 ```
 
+Ans: 
+
+unsigned int 與 int 比較或是進行運算時 ，會都變成unsigned形式，因此都會變成正數。
+
+所以會輸出puts(">6")
+
 <br/>
 
 # 43
 
 The faster way to an integer multiply by 7 ? (bitwise)
 
+
+Ans: 
+
+```
+n = (n<<3)+n
+
+```
 <br/>
 
 # 44
@@ -1030,12 +1185,56 @@ The faster way to an integer multiply by 7 ? (bitwise)
 
 Write functions isUpper() and toUpper()
 
+Ans:
+
+```
+#include <stdbool.h>
+
+bool isUpper(int n){
+    return (n >='A' && n<='Z');
+}
+
+int toUpper(int n){
+
+    if(isUpper(n)){
+        retuen n;
+    }
+    else{ 
+        return(n+'A'-'a');
+    }
+}
+
+```
+
 
 <br/>
 
 # 47
 
 Count the number of 1 in an integer x (in binary)?
+
+Ans:
+
+```
+void main(){
+
+    int x;
+    scanf("%d",&x);
+
+    int c=0;
+
+    while(x!=0){
+        c=c+1;
+        x= x&(x-1);
+    }
+    printf("總共有%d個1\n",c);
+}
+
+```
+
+
+
+
 
 <br/>
 

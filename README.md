@@ -415,7 +415,7 @@ void main(int n)
 
 <br/>
 
-# 26  寫出3種反轉字元的方式
+# 26  寫出反轉字元的方式
 
 reverse a string
 
@@ -558,11 +558,15 @@ What is stack and heap when talking about memory?
 
 # 39
 
+https://www.geeksforgeeks.org/difference-between-process-and-thread/
+
 Explain "thread" and "process",and what is the difference?
 
 <br/>
 
 # 40
+
+https://www.runoob.com/note/24230
 
 Typedef 在C語言中頻繁用以宣告一個已經存在的資料型態的同義字，也可以用預處理器做類似的事，例如思考一下下面的例子:
 
