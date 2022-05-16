@@ -246,6 +246,17 @@ int main(void) {
 
 // 寫出上述所述之指標
 
+1. An integer
+2. A pointer to an integer
+3. A pointer to a pointer to an integer
+4. An array of 10 integers
+5. An array of 10 pointers to integers
+6. A pointer to an array of 10 integers
+7. A pointer to a function that takes an integer as an argument and returns an integer
+8. An array of ten pointers to functions that take an integer argument and return an integer
+    
+// 寫出上述所述之指標
+
 
 <br/>
 
@@ -424,11 +435,16 @@ Write a MARCO to calculate the square of integer a.
 <br/>
 
 # 29
+https://www.geeksforgeeks.org/write-a-c-function-to-print-the-middle-of-the-linked-list/
+
 Write a function to find the middle field of singled-linked list without traverse whole list.
 
 <br/>
 
 # 30
+
+https://www.geeksforgeeks.org/reverse-a-linked-list/
+
 Write a code to reverse the linked list.
 
 For example: [0] -> [n], [1]->[n-1],…[n]->[0].
@@ -463,8 +479,6 @@ int SQR(volatile int *a){
 
 # 34
 http://arc2453.blog.fc2.com/blog-entry-31.html
-
-
 
 Global 直接宣告參數不給值
 跟function 裡面宣告參數不給值
@@ -591,6 +605,8 @@ The faster way to an integer multiply by 7 ? (bitwise)
 
 # 44 leetcode 151
 https://leetcode.com/problems/reverse-words-in-a-string/discuss/805248/C-4ms-and-5.7M-in-place-no-string-library.
+
+https://leetcode.com/problems/reverse-words-in-a-string/discuss/1531349/Two-pointers-solution-in-C
 
 以單字為反轉字串， Ex: He is a boy => boy a is He。
 

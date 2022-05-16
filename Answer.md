@@ -482,6 +482,29 @@ Ans:
 
 // 寫出上述所述之指標
 
+1. An integer
+2. A pointer to an integer
+3. A pointer to a pointer to an integer
+4. An array of 10 integers
+5. An array of 10 pointers to integers
+6. A pointer to an array of 10 integers
+7. A pointer to a function that takes an integer as an argument and returns an integer
+8. An array of ten pointers to functions that take an integer argument and return an integer
+    
+// 寫出上述所述之指標
+
+//(用英文比較好理解)
+Ans: 
+
+1. int p;
+2. int *p;
+3. int **p;
+4. int p[10];
+5. int *p[10];
+6. int (*p)[10];
+7. int (*p)(int);
+8. int (*p[10])(int);
+   
 
 <br/>
 
@@ -489,26 +512,39 @@ Ans:
 
 [bitwise解法](http://puremonkey2010.blogspot.com/2011/05/c-bitwise-operation.html)
 
+Ans:
 ```
-int main(void) {
-    
-    int a = 10;
-    int b = 20;
-    
-    printf("%d\n",a);
-    printf("%d\n",b);
-    
-    a = a^b;
-    b = a^b;
-    a = a^b;
-    
-    printf("%d\n",a);
-    printf("%d\n",b);
+void swap1(int* a, int* b){
+
+    *a = *a^*b;
+    *b = *a^*b;
+    *a = *a^*b;
 }
+
+int main()
+{
+    void swap(int*, int*);
+    int a =10;
+    int b =20;
+    int* pa =&a;
+    int* pb =&b;
+
+    printf("%d\n",a);
+    printf("%d\n",b);
+    
+    swap1(pa,pb);
+    
+    printf("%d\n",a);
+    printf("%d\n",b);
+
+    return 0;
+}
+
 ```
 
 [指標解法](https://www.796t.com/content/1549322654.html)
 
+Ans:
 ```
 #include <stdio.h>
 
@@ -543,7 +579,6 @@ int main(void) {
 }
 ```
 
-
 <br/>
 
 # 15
@@ -551,21 +586,69 @@ int main(void) {
 https://leetcode.com/problems/maximum-subarray/
 
 
+Ans:
+```
+#include <stdio.h>
+#define MAX(a,b) (a)>(b)?(a):(b)
+
+int maxSubArray(int* nums, int numsSize){
+
+    int i=0;
+    int best = INT_MIN; //假如 [-1,-2,-3]，總和還是<0 因此不能設為零，因此設成INT_MIN。
+    int sum = 0;
+
+    for(i =0;i<=numSize;i++){
+
+        best = MAX(sum +nums[i],nums[i]);
+        sum = MAX(best,sum);
+    }
+    return 0;
+}
+```
 <br/>
 
 # 16
 
 https://mkfsn.blogspot.com/2016/12/blog-post.html
 
-
 Explain "#error"
 
+Ans:
+
+error 是一種Macro，在compiler執行時，若有遇到問題，就會終止程式，並且輸出錯誤訊息。
 
 <br/>
 
 # 17
-
 Explain "struct" and "union"?
+
+Ans:
+
+struct 與 union 很像，但最大的不同點是所使用的空間，
+
+假設分別宣告一個struct 以及 union
+
+struct A{
+    int a;
+    double;
+}
+
+union A{
+    int a;
+    double;
+}
+
+struct A 所佔據的空間為 4+8 =12 byte;
+
+union A 所佔據的空間為最大的參數為 8 byte;
+
+
+<br/>
+
+因此，
+struct每個參數都是獨立的，都各自佔有記憶體空間，
+
+union內的參數所佔據的空間是共享的，由最大的那個決定大小
 
 
 <br/>
@@ -577,6 +660,15 @@ Explain "volatile".
 Can we use "const" and "volatile" in the same variable? 
 
 Can we use "volatile" in a pointer?
+
+
+Ans:
+
+1.volatile，中文為易揮發的，在c語言中主要是通知compiler不要對進行最佳化，因為他的值會不穩定一直變動。
+
+2.可以同時使用 const,volatile，const所代表的是只可以讀的(Read-only)，因此兩者不衝突。
+
+3.可以，但volatile pointer實際值會變動。
 
 <br/>
 
@@ -592,6 +684,30 @@ b. clear the specific bit
 c. inverse the specific bit (0->1; 1->0)
 
 
+Ans:
+
+```
+//a. set the specific bit
+
+int a = 1 ;
+
+a |= (1<<(n));
+
+
+//b. clear the specific bit
+
+int a = 1 ;
+
+a &= ~(1<<(n));
+
+
+//c. inverse the specific bit (0->1; 1->0)
+
+int a = 1 ;
+
+a ^= (1<<(n));
+
+```
 <br/>
 
 # 20
@@ -602,6 +718,18 @@ typedef ___________;
 pf(*papf)[3];
 ```
 
+
+Ans:
+
+void(*(*papf)[3])(char *) => pf(*papf)[3];
+
+假設(*papf)[3] = A;
+
+void(*(A)(char *) => pf(A)
+
+因此，typedef void(*pf)(char *);
+
+
 <br/>
 
 # 21 考你如何使用bitwise (難)
@@ -609,13 +737,38 @@ https://www.geeksforgeeks.org/write-an-efficient-method-to-check-if-a-number-is-
 
 Write a code that check the input is a multiple of 3 or not without using division or mod
 
+Ans:
+```
+#include <stdio.h>
 
+void main() {
+    int x;
+    scanf("%d", &x);
+    
+    while(x>=3){
+        x=x-3;
+
+        if(x<3 && x==0){
+            printf("x = %d 這是3的倍數\n", x);
+        }
+        else if(x<3&& x!=0){
+            printf("x = %d 這不是3的倍數\n", x);
+        }
+    }
+}
+
+```
 <br/>
 
 # 22
 
 Explain lvalue and rvalue.
 
+Ans:
+
+lvalue 等號左側的值，有實際記憶體位置，可以使用reference
+
+rvalue 等號右側的值，單純給值，不可使用reference
 
 <br/>
 
