@@ -5,7 +5,7 @@ https://www.onlinegdb.com/
 
 ## 標註覺得困難的題型 (多複習)
 
-21 23 24 26 29 30 44 45 
+21 23 24 26 29 30 44 45
 
 概念複習要多看:12 13 14 34 36 37 38 39
 
@@ -27,7 +27,7 @@ MUX(10+5, 10-5) = ?
 MUX取代下方式子，10+5*10-5 =10+50-5 =55
 
 <br/>
-Ans: 55 
+Ans: 55
 
 <br/>
 
@@ -43,7 +43,7 @@ v = v | v2;
 
 //求 v = ?
 ```
-v1 = 0001 0001 0001 0001 
+v1 = 0001 0001 0001 0001
 
 v2 = 0001 0010 0000 0010
 
@@ -51,7 +51,7 @@ v2 = 0001 0010 0000 0010
 
 <br/>
 
-0001 0001 0001 0001 
+0001 0001 0001 0001
 
 1110 1101 1111 1101 &
 
@@ -64,7 +64,7 @@ v = v1&(~v2) = 0000 0001 0001 0001
 
 <br/>
 
-0001 0001 0001 0001 
+0001 0001 0001 0001
 
 0001 0010 0000 0010 |
 
@@ -174,7 +174,7 @@ return count;
 fun(456) + fun(123) + fun(789) = ?
 ```
 
-代值進入運算，EX:7 
+代值進入運算，EX:7
 
 0111    //count +1
 
@@ -190,7 +190,7 @@ fun(456) + fun(123) + fun(789) = ?
 
 0100    //count +1
 
-0011 &   
+0011 &
 /---------/
 
 0000
@@ -274,7 +274,7 @@ ques2 = ++a + ++b;
 ques2 = (1+26) + (1+31) = 59
 
 <br/>
-Ans =59 
+Ans =59
 
 <br/>
 
@@ -310,8 +310,8 @@ int main(void) {
 
 x = func(x, &y); //5 ,&7
 
-=>  
-c = 1; 
+=>
+c = 1;
 
 m = 5+1 = 6;
 
@@ -458,7 +458,7 @@ str[2] + 4 = 'o'
 
 
 <br/>
-Ans: 
+Ans:
 
 1. WelcomeToHere
 2. Genius
@@ -490,11 +490,11 @@ Ans:
 6. A pointer to an array of 10 integers
 7. A pointer to a function that takes an integer as an argument and returns an integer
 8. An array of ten pointers to functions that take an integer argument and return an integer
-    
+
 // 寫出上述所述之指標
 
 //(用英文比較好理解)
-Ans: 
+Ans:
 
 1. int p;
 2. int *p;
@@ -504,7 +504,7 @@ Ans:
 6. int (*p)[10];
 7. int (*p)(int);
 8. int (*p[10])(int);
-   
+
 
 <br/>
 
@@ -531,9 +531,9 @@ int main()
 
     printf("%d\n",a);
     printf("%d\n",b);
-    
+
     swap1(pa,pb);
-    
+
     printf("%d\n",a);
     printf("%d\n",b);
 
@@ -556,24 +556,24 @@ void swap(int* a, int* b){
 }
 
 int main(void) {
-    
+
     int a = 10;
     int b = 20;
-    
+
     int * pa = &a;
     int * pb = &b;
-    
+
     printf("%p\n",pa);
     printf("%p\n",pb);
-    
+
     printf("%d\n",a);
     printf("%d\n",b);
-    
+
     swap(pa,pb);
-    
+
     printf("%p\n",pa);
     printf("%p\n",pb);
-    
+
     printf("%d\n",a);
     printf("%d\n",b);
 }
@@ -655,9 +655,9 @@ union內的參數所佔據的空間是共享的，由最大的那個決定大小
 
 # 18
 
-Explain "volatile". 
+Explain "volatile".
 
-Can we use "const" and "volatile" in the same variable? 
+Can we use "const" and "volatile" in the same variable?
 
 Can we use "volatile" in a pointer?
 
@@ -739,7 +739,7 @@ Ans:
 void main() {
     int x;
     scanf("%d", &x);
-    
+
     while(x>=3){
         x=x-3;
 
@@ -767,7 +767,7 @@ rvalue 等號右側的值，單純給值，不可使用reference
 
 <br/>
 
-# 23 
+# 23
 https://hackmd.io/@Rance/SkSJL_5gX?type=view
 
 https://cvfiasd.pixnet.net/blog/post/273373732-%E5%88%A9%E7%94%A8function-pointer-array%E7%B4%A2%E5%BC%95%E5%87%BD%E5%BC%8F
@@ -916,7 +916,7 @@ Ival = *p;
 
 Ans:
 
-ival => Int 
+ival => Int
 
 **p => a pointer to a pointer to a integer
 
@@ -1064,6 +1064,13 @@ https://ptt-chat.com/WomenTalk/l/CHAT.M.1598976583.A.721
 
 What is stack and heap when talking about memory?
 
+
+Ans:
+
+stack 用於靜態記憶體配置，是拿來給程式呼叫 function 時存放 function 資料用的。
+
+heap 用於動態記憶體配置，用來存放並且管理，程式全部所需要用到的變數與資料。
+
 <br/>
 
 # 39
@@ -1097,7 +1104,7 @@ Ans:
 
 假設，
 ```
-dPS p1,p2; 
+dPS p1,p2;
 tPS p3,p4;
 
 //解析後
@@ -1146,7 +1153,7 @@ void foo(void){
 }
 ```
 
-Ans: 
+Ans:
 
 unsigned int 與 int 比較或是進行運算時 ，會都變成unsigned形式，因此都會變成正數。
 
@@ -1159,7 +1166,7 @@ unsigned int 與 int 比較或是進行運算時 ，會都變成unsigned形式�
 The faster way to an integer multiply by 7 ? (bitwise)
 
 
-Ans: 
+Ans:
 
 ```
 n = (n<<3)+n
@@ -1200,7 +1207,7 @@ int toUpper(int n){
     if(isUpper(n)){
         retuen n;
     }
-    else{ 
+    else{
         return(n+'A'-'a');
     }
 }
