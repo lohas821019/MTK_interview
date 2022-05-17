@@ -637,3 +637,12 @@ Count the number of 1 in an integer x (in binary)?
 
 <br/>
 
+# 48
+
+印出 
+
+```
+*
+***
+*****
+```
