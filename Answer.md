@@ -434,12 +434,15 @@ str[3] = EverydayGenius
 ---
 
 str[4] = HopeEverythingGood
+
 char* m = str[4] + 4 = E (因為是字元指針+4)
 
 ---
 
 str[1] = "WelcomeToHere"
+
 char* n = str[1]; //指向'W'
+
 *(n+3) = c
 
 ---
@@ -862,7 +865,6 @@ Ans:
 void SUM(int n){
     return (1+n)*(n)/2;
 }
-
 ```
 <br/>
 
@@ -1023,7 +1025,7 @@ What is "const" ? and what is the meaning of:
 
 Ans:
 
-// 注意const 在 * 的左方還是右方，以這題為例，*左方修飾in,*右方修飾指標
+// 注意const 在 * 的左方還是右方，以這題為例，*左方修飾int,*右方修飾指標
 
 1. const int a; => 只可以讀的整數a
 2. int const a; => 只可以讀的整數a
@@ -1169,14 +1171,17 @@ The faster way to an integer multiply by 7 ? (bitwise)
 Ans:
 
 ```
-n = (n<<3)+n
+n = (n<<3) + n
 
 n = (n<<2) + (n<<1) + (n<<0)
 ```
 <br/>
 
-# 44
+# 44 leetcode 151
 
+https://leetcode.com/problems/reverse-words-in-a-string/discuss/805248/C-4ms-and-5.7M-in-place-no-string-library.
+
+https://leetcode.com/problems/reverse-words-in-a-string/discuss/1531349/Two-pointers-solution-in-C
 以單字為反轉字串， Ex: He is a boy => boy a is He。
 
 
@@ -1231,7 +1236,7 @@ void main(){
     int c=0;
 
     while(x!=0){
-        c=c+1;
+        c = c + 1;
         x= x&(x-1);
     }
     printf("總共有%d個1\n",c);
@@ -1253,6 +1258,7 @@ void main(){
 Ans:
 
 ```
+//先理出這個思路
 #include <stdio.h>
 
 int main()
@@ -1264,6 +1270,33 @@ int main()
     scanf("%d", &n);
 
     for(i=1; i<=n; i++)
+    {
+        /* Print i number of stars */
+        for(j=1; j<=i; j++)
+        {
+            printf("*");
+        }
+
+        /* Move to next line */
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+
+```
+#include <stdio.h>
+
+int main()
+{
+    int i, j, n;
+
+    /* Input number of rows from user */
+    printf("Enter value of n: ");
+    scanf("%d", &n);
+
+    for(i=1; i<=n; i+=2)
     {
         /* Print i number of stars */
         for(j=1; j<=i; j++)
