@@ -591,21 +591,19 @@ https://leetcode.com/problems/maximum-subarray/
 
 Ans:
 ```
-#include <stdio.h>
-#define MAX(a,b) (a)>(b)?(a):(b)
+#define MAX(a,b) ((a)>(b))?(a):(b)
 
 int maxSubArray(int* nums, int numsSize){
 
-    int i=0;
-    int best = INT_MIN; //假如 [-1,-2,-3]，總和還是<0 因此不能設為零，因此設成INT_MIN。
+    int n = 0;
+    int best = INT_MIN;//假如 [-1,-2,-3]，總和還是<0 因此不能設為零，因此設成INT_MIN。
     int sum = 0;
-
-    for(i =0;i<=numSize;i++){
-
-        best = MAX(sum +nums[i],nums[i]);
-        sum = MAX(best,sum);
+    
+    for(n =0;n<numsSize;n++){
+        sum = MAX(sum+nums[n],nums[n]);
+        best = MAX(best,sum);
     }
-    return 0;
+    return best;  
 }
 ```
 <br/>
